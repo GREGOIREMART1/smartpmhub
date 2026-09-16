@@ -229,6 +229,40 @@
   }
   @media(max-width:640px){.about-flex{grid-template-columns:1fr;gap:26px}.about-portrait{width:110px;height:110px;font-size:2rem}}
 
+  /* ---------- TEACHING ---------- */
+  .teach{background:var(--ink);color:#fff}
+  .teach .sec-tag{color:#6E97FF}
+  .teach .sec-head h2{color:#fff}
+  .teach .sec-head p{color:#AEB6C4}
+  .teach-lead{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:start;margin-bottom:56px}
+  .teach-lead .course-card{
+    background:var(--ink-soft);border:1px solid var(--steel-line-dk);border-radius:12px;padding:30px 32px;
+  }
+  .teach-lead .course-card .badge{
+    display:inline-block;font-family:var(--display);font-weight:600;font-size:.78rem;letter-spacing:.02em;
+    color:#6E97FF;border:1px solid var(--steel-line-dk);border-radius:100px;padding:6px 13px;margin-bottom:18px;
+  }
+  .teach-lead .course-card h3{font-family:var(--display);font-weight:600;font-size:1.4rem;line-height:1.15;letter-spacing:-.01em;color:#fff;margin-bottom:12px}
+  .teach-lead .course-card p{font-size:1rem;color:#AEB6C4;line-height:1.55;margin-bottom:20px}
+  .teach-lead .course-card ul{list-style:none;display:flex;flex-direction:column;gap:11px}
+  .teach-lead .course-card li{font-size:.96rem;color:#C4CBD7;padding-left:22px;position:relative;line-height:1.4}
+  .teach-lead .course-card li::before{content:"";position:absolute;left:0;top:9px;width:8px;height:8px;background:var(--signal);border-radius:2px;transform:rotate(45deg)}
+  .teach-intro p{font-size:1.08rem;color:#C4CBD7;line-height:1.62;margin-bottom:18px}
+  .teach-intro p:last-child{margin-bottom:0}
+  .teach-offer{border-top:1px solid var(--steel-line-dk)}
+  .teach-offer-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--steel-line-dk)}
+  .teach-offer-item{padding:32px 28px 34px;border-right:1px solid var(--steel-line-dk)}
+  .teach-offer-item:last-child{border-right:none}
+  .teach-offer-item .fmt{font-family:var(--display);font-weight:600;font-size:.8rem;color:#6E97FF;margin-bottom:16px}
+  .teach-offer-item h4{font-family:var(--display);font-weight:600;font-size:1.18rem;line-height:1.18;letter-spacing:-.01em;color:#fff;margin-bottom:12px}
+  .teach-offer-item p{font-size:.95rem;color:#AEB6C4;line-height:1.55}
+  @media(max-width:820px){
+    .teach-lead{grid-template-columns:1fr;gap:32px}
+    .teach-offer-grid{grid-template-columns:1fr}
+    .teach-offer-item{border-right:none;border-bottom:1px solid var(--steel-line-dk)}
+    .teach-offer-item:last-child{border-bottom:none}
+  }
+
   @media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
   :focus-visible{outline:2px solid var(--signal);outline-offset:3px;border-radius:4px}
 </style>
@@ -242,6 +276,7 @@
       <a href="#how" data-i18n="nav_how">How it works</a>
       <a href="#services" data-i18n="nav_services">Services</a>
       <a href="#engagements" data-i18n="nav_engagements">Engagements</a>
+      <a href="#teaching" data-i18n="nav_teaching">Teaching</a>
       <a href="#about" data-i18n="nav_about">About</a>
       <a href="#contact" class="nav-cta" data-i18n="nav_cta">Start a conversation</a>
       <button id="langToggle" class="lang-toggle" aria-label="Switch language">FR</button>
@@ -420,6 +455,59 @@
     </div>
   </section>
 
+  <!-- TEACHING -->
+  <section class="teach" id="teaching">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="sec-tag" data-i18n="teach_tag">Teaching &amp; training</div>
+        <h2 data-i18n="teach_h2">I teach what I practise — and can train your teams to do the same.</h2>
+        <p data-i18n="teach_p">Beyond client engagements, I lecture on PMO and portfolio governance at postgraduate level, and design hands-on training that turns theory into capability your people keep.</p>
+      </div>
+
+      <div class="teach-lead">
+        <div class="teach-intro">
+          <p data-i18n="teach_intro1">As a lecturer in a Swiss university's CAS in project management, I lead the full PMO module — from why PMOs emerge and the conceptual frameworks (Hobbs &amp; Aubry, Hill, Unger), through portfolio governance, prioritisation and resource allocation, to a guided case study and a live workshop where participants build a 12-month PMO roadmap.</p>
+          <p data-i18n="teach_intro2">The teaching is deliberately practical: real maturity models, actual prioritisation grids, and the change-management realities of standing a PMO up. It's the same material I bring into organisations — which is exactly why the training sticks.</p>
+        </div>
+        <div class="course-card">
+          <span class="badge" data-i18n="teach_badge">University CAS · PMO Module</span>
+          <h3 data-i18n="teach_card_h">PMO &amp; Portfolio Governance</h3>
+          <p data-i18n="teach_card_p">A full teaching day, from first principles to an applied roadmap. What participants leave with:</p>
+          <ul>
+            <li data-i18n="teach_card_l1">The missions, roles and typologies of a PMO — and how to pick the right one</li>
+            <li data-i18n="teach_card_l2">Portfolio governance, prioritisation and resource allocation in practice</li>
+            <li data-i18n="teach_card_l3">A guided maturity diagnostic on a real case</li>
+            <li data-i18n="teach_card_l4">A 12-month PMO roadmap they build themselves</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="teach-offer">
+        <div class="sec-head" style="margin-top:52px;margin-bottom:0">
+          <div class="sec-tag" data-i18n="teach_offer_tag">Bring it in-house</div>
+          <h2 data-i18n="teach_offer_h2" style="font-size:clamp(1.4rem,2.4vw,1.9rem)">Training formats for your organisation.</h2>
+        </div>
+        <div class="teach-offer-grid">
+          <div class="teach-offer-item">
+            <div class="fmt" data-i18n="teach_o1_fmt">Half-day · leadership</div>
+            <h4 data-i18n="teach_o1_h">PMO Masterclass for leaders</h4>
+            <p data-i18n="teach_o1_p">A focused session for executives and sponsors on what a PMO can and can't do, how to resource it, and how to tell whether it's working.</p>
+          </div>
+          <div class="teach-offer-item">
+            <div class="fmt" data-i18n="teach_o2_fmt">1 day · teams</div>
+            <h4 data-i18n="teach_o2_h">Maturity &amp; roadmap workshop</h4>
+            <p data-i18n="teach_o2_p">Your team runs its own maturity diagnostic and leaves with a prioritised 12-month roadmap — the same format used in the CAS, tailored to your context.</p>
+          </div>
+          <div class="teach-offer-item">
+            <div class="fmt" data-i18n="teach_o3_fmt">Tailored · practitioners</div>
+            <h4 data-i18n="teach_o3_h">PM capability building</h4>
+            <p data-i18n="teach_o3_p">Practical upskilling for project managers on governance, prioritisation, reporting and the tools that support them — built around your methodology.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- CREDENTIALS -->
   <section class="cred">
     <div class="wrap">
@@ -492,7 +580,7 @@
   document.getElementById('yr').textContent = new Date().getFullYear();
 
   const fr = {
-    nav_how:"Démarche", nav_services:"Prestations", nav_engagements:"Missions", nav_about:"À propos",
+    nav_how:"Démarche", nav_services:"Prestations", nav_engagements:"Missions", nav_teaching:"Formation", nav_about:"À propos",
     nav_cta:"Prendre contact",
     hero_eyebrow:"Portfolio · PMO · delivery augmenté par l'IA",
     hero_h1:"Le trait d'union entre stratégie et exécution.",
@@ -562,6 +650,29 @@
     about_p1:"Depuis 18+ ans, je me tiens au point de rencontre entre la stratégie et l'exécution — à la tête de fonctions portfolio et PMO dans la gouvernance sportive internationale, les biens de grande consommation, l'automobile et le conseil en stratégie. J'ai piloté 50+ projets stratégiques simultanés par an, mené des portefeuilles d'amélioration de la rentabilité sur des marchés émergents, et consacré ces derniers temps à intégrer l'IA aux organisations sans jamais relâcher la gouvernance.",
     about_p2:"Je travaille en facilitateur, pas en pompier — <em>faire avec, pas faire pour</em>. Le but n'est pas de laisser un slide derrière moi ; c'est de bâtir la mécanique et la capacité pour que vos équipes continuent de livrer bien après la fin de la mission. Je suis basé à Lausanne, je travaille en français et en anglais, et j'enseigne à la prochaine génération de chefs de projet dans une haute école de gestion suisse.",
     about_quote:"« Le meilleur cadre est celui que vos équipes utiliseront vraiment. Je pars de votre façon de livrer, pas de la technologie. »",
+    teach_tag:"Enseignement & formation",
+    teach_h2:"J'enseigne ce que je pratique — et je peux former vos équipes à en faire autant.",
+    teach_p:"Au-delà des missions clients, j'enseigne le PMO et la gouvernance de portefeuille au niveau postgrade, et je conçois des formations pratiques qui transforment la théorie en une capacité que vos équipes conservent.",
+    teach_intro1:"Comme chargé de cours dans le CAS en management de projet d'une haute école suisse, j'anime l'intégralité du module PMO — de l'émergence des PMO et des cadres conceptuels (Hobbs &amp; Aubry, Hill, Unger), à la gouvernance de portefeuille, la priorisation et l'allocation des ressources, jusqu'à une étude de cas guidée et un atelier où les participants construisent une roadmap PMO sur 12 mois.",
+    teach_intro2:"L'enseignement est délibérément pratique : vrais modèles de maturité, grilles de priorisation réelles, et les réalités de conduite du changement lors de la mise en place d'un PMO. C'est exactement la matière que j'apporte en entreprise — et c'est pour ça que la formation reste ancrée.",
+    teach_badge:"CAS universitaire · Module PMO",
+    teach_card_h:"PMO & gouvernance de portefeuille",
+    teach_card_p:"Une journée complète, des principes fondamentaux à une roadmap appliquée. Ce que les participants en retirent :",
+    teach_card_l1:"Les missions, rôles et typologies d'un PMO — et comment choisir le bon",
+    teach_card_l2:"Gouvernance de portefeuille, priorisation et allocation des ressources en pratique",
+    teach_card_l3:"Un diagnostic de maturité guidé sur un cas réel",
+    teach_card_l4:"Une roadmap PMO sur 12 mois qu'ils construisent eux-mêmes",
+    teach_offer_tag:"En intra-entreprise",
+    teach_offer_h2:"Des formats de formation pour votre organisation.",
+    teach_o1_fmt:"Demi-journée · dirigeants",
+    teach_o1_h:"Masterclass PMO pour dirigeants",
+    teach_o1_p:"Une session ciblée pour les cadres et sponsors : ce qu'un PMO peut et ne peut pas faire, comment le doter en ressources, et comment savoir s'il fonctionne.",
+    teach_o2_fmt:"1 jour · équipes",
+    teach_o2_h:"Atelier maturité & roadmap",
+    teach_o2_p:"Votre équipe réalise son propre diagnostic de maturité et repart avec une roadmap priorisée sur 12 mois — le format du CAS, adapté à votre contexte.",
+    teach_o3_fmt:"Sur mesure · praticiens",
+    teach_o3_h:"Montée en compétence PM",
+    teach_o3_p:"Un renforcement pratique pour les chefs de projet : gouvernance, priorisation, reporting et les outils qui les soutiennent — construit autour de votre méthodologie.",
     contact_tag:"Prendre contact",
     contact_h2:"Parlons de là où votre exécution se bloque.",
     contact_lead:"Que vous montiez un PMO, que vous tentiez d'intégrer l'IA à votre organisation, ou que vous ayez simplement besoin d'une paire de mains senior sur la gouvernance de portefeuille — la première conversation est gratuite et utile dans tous les cas.",
