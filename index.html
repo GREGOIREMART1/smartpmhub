@@ -54,6 +54,13 @@
     transition:background .15s;
   }
   .nav-cta:hover{background:var(--signal)}
+  .lang-toggle{
+    font-family:var(--display);font-weight:600;font-size:.82rem;letter-spacing:.02em;
+    background:transparent;color:var(--steel);border:1px solid var(--steel-line);
+    padding:8px 12px;border-radius:6px;cursor:pointer;min-width:42px;
+    transition:border-color .15s,color .15s;
+  }
+  .lang-toggle:hover{border-color:var(--signal);color:var(--signal)}
   @media(max-width:760px){.nav-links a:not(.nav-cta){display:none}}
 
   /* ---------- HERO ---------- */
@@ -232,11 +239,12 @@
   <div class="wrap nav-inner">
     <a href="#top" class="brand">Smart&nbsp;PM&nbsp;Hub<span>.</span></a>
     <nav class="nav-links">
-      <a href="#how">How it works</a>
-      <a href="#services">Services</a>
-      <a href="#engagements">Engagements</a>
-      <a href="#about">About</a>
-      <a href="#contact" class="nav-cta">Start a conversation</a>
+      <a href="#how" data-i18n="nav_how">How it works</a>
+      <a href="#services" data-i18n="nav_services">Services</a>
+      <a href="#engagements" data-i18n="nav_engagements">Engagements</a>
+      <a href="#about" data-i18n="nav_about">About</a>
+      <a href="#contact" class="nav-cta" data-i18n="nav_cta">Start a conversation</a>
+      <button id="langToggle" class="lang-toggle" aria-label="Switch language">FR</button>
     </nav>
   </div>
 </header>
@@ -247,21 +255,19 @@
   <section class="hero">
     <div class="hero-grid-bg" aria-hidden="true"></div>
     <div class="wrap">
-      <div class="eyebrow">Portfolio · PMO · AI-enabled delivery</div>
-      <h1>The bridge between strategy and execution.</h1>
+      <div class="eyebrow" data-i18n="hero_eyebrow">Portfolio · PMO · AI-enabled delivery</div>
+      <h1 data-i18n="hero_h1">The bridge between strategy and execution.</h1>
       <p class="hero-sub">
-        I help organisations turn strategic ambition into governed, adopted delivery — standing up
-        the portfolio and PMO machinery, bringing AI into the operating model safely, and building
-        the capability to keep it running long after I leave.
+        <span data-i18n="hero_sub">I help organisations turn strategic ambition into governed, adopted delivery — standing up the portfolio and PMO machinery, bringing AI into the operating model safely, and building the capability to keep it running long after I leave.</span>
       </p>
       <div class="hero-actions">
-        <a href="#contact" class="btn-primary">Start a conversation</a>
-        <a href="#services" class="btn-ghost">See how I work</a>
+        <a href="#contact" class="btn-primary" data-i18n="hero_btn1">Start a conversation</a>
+        <a href="#services" class="btn-ghost" data-i18n="hero_btn2">See how I work</a>
       </div>
       <div class="hero-meta">
-        <div><div class="k">18+ yrs</div><div class="l">Senior programme &amp; portfolio leadership</div></div>
-        <div><div class="k">50+</div><div class="l">Concurrent strategic projects governed per year</div></div>
-        <div><div class="k">2&nbsp;days&nbsp;→&nbsp;min</div><div class="l">Project setup &amp; reporting, after AI-enabled redesign</div></div>
+        <div><div class="k">18+ yrs</div><div class="l" data-i18n="hero_m1">Senior programme &amp; portfolio leadership</div></div>
+        <div><div class="k">50+</div><div class="l" data-i18n="hero_m2">Concurrent strategic projects governed per year</div></div>
+        <div><div class="k">2&nbsp;days&nbsp;→&nbsp;min</div><div class="l" data-i18n="hero_m3">Project setup &amp; reporting, after AI-enabled redesign</div></div>
       </div>
     </div>
   </section>
@@ -270,24 +276,24 @@
   <section class="convictions" id="convictions">
     <div class="wrap">
       <div class="sec-head">
-        <div class="sec-tag">What I believe</div>
-        <h2>Three convictions that shape every engagement.</h2>
+        <div class="sec-tag" data-i18n="conv_tag">What I believe</div>
+        <h2 data-i18n="conv_h2">Three convictions that shape every engagement.</h2>
       </div>
       <div class="conv-grid">
         <div class="conv">
           <div class="n">01</div>
-          <h3>Governance makes acceleration safe</h3>
-          <p>Structure is what lets you move fast without shadow-AI or shadow-project risk. The framework isn't the brake — it's the guardrail that lets you take the corner faster.</p>
+          <h3 data-i18n="conv1_h">Governance makes acceleration safe</h3>
+          <p data-i18n="conv1_p">Structure is what lets you move fast without shadow-AI or shadow-project risk. The framework isn't the brake — it's the guardrail that lets you take the corner faster.</p>
         </div>
         <div class="conv">
           <div class="n">02</div>
-          <h3>Economics beat the demo</h3>
-          <p>Build-vs-buy, licensing models, and total cost decide whether value is real. A dazzling proof-of-concept that doesn't survive its own business case was never a solution.</p>
+          <h3 data-i18n="conv2_h">Economics beat the demo</h3>
+          <p data-i18n="conv2_p">Build-vs-buy, licensing models, and total cost decide whether value is real. A dazzling proof-of-concept that doesn't survive its own business case was never a solution.</p>
         </div>
         <div class="conv">
           <div class="n">03</div>
-          <h3>Adoption is the only metric that counts</h3>
-          <p>A framework nobody uses is a cost, not an asset. I measure success by what teams actually keep doing — not by what was delivered on paper.</p>
+          <h3 data-i18n="conv3_h">Adoption is the only metric that counts</h3>
+          <p data-i18n="conv3_p">A framework nobody uses is a cost, not an asset. I measure success by what teams actually keep doing — not by what was delivered on paper.</p>
         </div>
       </div>
     </div>
@@ -297,25 +303,25 @@
   <section class="how" id="how">
     <div class="wrap">
       <div class="sec-head">
-        <div class="sec-tag">How it works</div>
-        <h2>A disciplined path from ambition to adopted delivery.</h2>
-        <p>Three phases, each with a clear deliverable. You keep ownership throughout — the goal is to leave your teams running the machine.</p>
+        <div class="sec-tag" data-i18n="how_tag">How it works</div>
+        <h2 data-i18n="how_h2">A disciplined path from ambition to adopted delivery.</h2>
+        <p data-i18n="how_p">Three phases, each with a clear deliverable. You keep ownership throughout — the goal is to leave your teams running the machine.</p>
       </div>
       <div class="how-grid">
         <div class="how-step">
-          <div class="step-n">Phase 01</div>
-          <h3>Diagnose</h3>
-          <p>We start with how your organisation actually delivers today — the governance gaps, the bottlenecks, the shadow work. You get a clear-eyed maturity assessment, not a sales pitch.</p>
+          <div class="step-n" data-i18n="how1_n">Phase 01</div>
+          <h3 data-i18n="how1_h">Diagnose</h3>
+          <p data-i18n="how1_p">We start with how your organisation actually delivers today — the governance gaps, the bottlenecks, the shadow work. You get a clear-eyed maturity assessment, not a sales pitch.</p>
         </div>
         <div class="how-step">
-          <div class="step-n">Phase 02</div>
-          <h3>Design the governed roadmap</h3>
-          <p>I come back with a prioritised plan: where to intervene, what it costs, what it returns, and how AI fits safely into the operating model. Decisions are grounded in economics, not the demo.</p>
+          <div class="step-n" data-i18n="how2_n">Phase 02</div>
+          <h3 data-i18n="how2_h">Design the governed roadmap</h3>
+          <p data-i18n="how2_p">I come back with a prioritised plan: where to intervene, what it costs, what it returns, and how AI fits safely into the operating model. Decisions are grounded in economics, not the demo.</p>
         </div>
         <div class="how-step">
-          <div class="step-n">Phase 03</div>
-          <h3>Stand it up &amp; hand it over</h3>
-          <p>We deploy the framework alongside your teams and build the capability to sustain it. Success is measured in adoption — what people keep doing after I've gone.</p>
+          <div class="step-n" data-i18n="how3_n">Phase 03</div>
+          <h3 data-i18n="how3_h">Stand it up &amp; hand it over</h3>
+          <p data-i18n="how3_p">We deploy the framework alongside your teams and build the capability to sustain it. Success is measured in adoption — what people keep doing after I've gone.</p>
         </div>
       </div>
     </div>
@@ -325,41 +331,41 @@
   <section id="services">
     <div class="wrap">
       <div class="sec-head">
-        <div class="sec-tag">Service lines</div>
-        <h2>Four ways I help leaders close the gap between plan and delivery.</h2>
-        <p>Each engagement is built to leave capability behind — I work <em>with</em> your teams, not instead of them.</p>
+        <div class="sec-tag" data-i18n="svc_tag">Service lines</div>
+        <h2 data-i18n="svc_h2">Four ways I help leaders close the gap between plan and delivery.</h2>
+        <p data-i18n="svc_p">Each engagement is built to leave capability behind — I work <em>with</em> your teams, not instead of them.</p>
       </div>
       <div class="svc">
         <div class="svc-row">
           <div class="idx">01</div>
-          <div><h3>Portfolio &amp; PMO Governance</h3></div>
+          <div><h3 data-i18n="svc1_h">Portfolio &amp; PMO Governance</h3></div>
           <div class="body">
-            <p>Stand up or rescue portfolio management: prioritisation against strategic objectives, investment and stage-gate review, RAID governance, executive and Board reporting, and benefits realisation.</p>
-            <div class="proof">Proven governing 50+ concurrent strategic projects per year in a complex international organisation; a €30M+/yr profit-improvement portfolio across Latin American markets; a ~$40M, 52-project strategic function in a global FMCG group.</div>
+            <p data-i18n="svc1_p">Stand up or rescue portfolio management: prioritisation against strategic objectives, investment and stage-gate review, RAID governance, executive and Board reporting, and benefits realisation.</p>
+            <div class="proof" data-i18n="svc1_pr">Proven governing 50+ concurrent strategic projects per year in a complex international organisation; a €30M+/yr profit-improvement portfolio across Latin American markets; a ~$40M, 52-project strategic function in a global FMCG group.</div>
           </div>
         </div>
         <div class="svc-row">
           <div class="idx">02</div>
-          <div><h3>AI-Enabled PMO &amp; Agentic Workflows</h3></div>
+          <div><h3 data-i18n="svc2_h">AI-Enabled PMO &amp; Agentic Workflows</h3></div>
           <div class="body">
-            <p>Bring AI into the operating model <em>with</em> governance: use-case assessment frameworks, agentic workflow design, Copilot × Smartsheet connectivity, and the build-vs-buy and licensing decisions that make it economic.</p>
-            <div class="proof">Backed by hands-on delivery of a live enterprise AI/agentic initiative, Smartsheet EMEA Product Advisory Council membership, and the PMI-CPMAI path. Headline result: project setup and consolidated reporting cut from two days to minutes.</div>
+            <p data-i18n="svc2_p">Bring AI into the operating model <em>with</em> governance: use-case assessment frameworks, agentic workflow design, Copilot × Smartsheet connectivity, and the build-vs-buy and licensing decisions that make it economic.</p>
+            <div class="proof" data-i18n="svc2_pr">Backed by hands-on delivery of a live enterprise AI/agentic initiative, Smartsheet EMEA Product Advisory Council membership, and the PMI-CPMAI path. Headline result: project setup and consolidated reporting cut from two days to minutes.</div>
           </div>
         </div>
         <div class="svc-row">
           <div class="idx">03</div>
-          <div><h3>Strategic Transformation &amp; Org Design</h3></div>
+          <div><h3 data-i18n="svc3_h">Strategic Transformation &amp; Org Design</h3></div>
           <div class="body">
-            <p>Operating-model and service-portfolio work: capability mapping, overlap and consolidation analysis, target operating models, and the change and adoption strategy that makes them stick.</p>
-            <div class="proof">Anchored by a 25-department service-portfolio build-out that produced a departmental consolidation recommendation adopted by leadership.</div>
+            <p data-i18n="svc3_p">Operating-model and service-portfolio work: capability mapping, overlap and consolidation analysis, target operating models, and the change and adoption strategy that makes them stick.</p>
+            <div class="proof" data-i18n="svc3_pr">Anchored by a 25-department service-portfolio build-out that produced a departmental consolidation recommendation adopted by leadership.</div>
           </div>
         </div>
         <div class="svc-row">
           <div class="idx">04</div>
-          <div><h3>Executive Advisory &amp; Capability Building</h3></div>
+          <div><h3 data-i18n="svc4_h">Executive Advisory &amp; Capability Building</h3></div>
           <div class="body">
-            <p>Trusted-advisor support to leadership on prioritisation and investment decisions — plus training that upskills your internal teams so the capability outlasts the engagement.</p>
-            <div class="proof">Reinforced by a current PMO lectureship at a Swiss business school, training the next generation of project leaders.</div>
+            <p data-i18n="svc4_p">Trusted-advisor support to leadership on prioritisation and investment decisions — plus training that upskills your internal teams so the capability outlasts the engagement.</p>
+            <div class="proof" data-i18n="svc4_pr">Reinforced by a current PMO lectureship at a Swiss business school, training the next generation of project leaders.</div>
           </div>
         </div>
       </div>
@@ -370,45 +376,45 @@
   <section class="eng" id="engagements">
     <div class="wrap">
       <div class="sec-head">
-        <div class="sec-tag">Packaged engagements</div>
-        <h2>Clear scope, clear outcomes, clear timelines.</h2>
-        <p>Productised entry points sized to the problem — from a focused diagnostic to a fractional leadership role.</p>
+        <div class="sec-tag" data-i18n="eng_tag">Packaged engagements</div>
+        <h2 data-i18n="eng_h2">Clear scope, clear outcomes, clear timelines.</h2>
+        <p data-i18n="eng_p">Productised entry points sized to the problem — from a focused diagnostic to a fractional leadership role.</p>
       </div>
       <div class="eng-list">
         <div class="eng-item">
           <div class="main">
-            <h3>PMO Diagnostic</h3>
-            <p>Maturity assessment, governance gaps, and a prioritised roadmap you can act on immediately.</p>
+            <h3 data-i18n="eng1_h">PMO Diagnostic</h3>
+            <p data-i18n="eng1_p">Maturity assessment, governance gaps, and a prioritised roadmap you can act on immediately.</p>
           </div>
-          <div class="dur">2–4 weeks</div>
+          <div class="dur" data-i18n="eng1_d">2–4 weeks</div>
         </div>
         <div class="eng-item">
           <div class="main">
-            <h3>AI-Readiness Sprint</h3>
-            <p>Use-case assessment, the economics behind each, and a governed pilot designed to prove real value.</p>
+            <h3 data-i18n="eng2_h">AI-Readiness Sprint</h3>
+            <p data-i18n="eng2_p">Use-case assessment, the economics behind each, and a governed pilot designed to prove real value.</p>
           </div>
-          <div class="dur">4–6 weeks</div>
+          <div class="dur" data-i18n="eng2_d">4–6 weeks</div>
         </div>
         <div class="eng-item">
           <div class="main">
-            <h3>Portfolio Stand-Up</h3>
-            <p>A full governance, reporting, and prioritisation framework — deployed, adopted, and owned by your team.</p>
+            <h3 data-i18n="eng3_h">Portfolio Stand-Up</h3>
+            <p data-i18n="eng3_p">A full governance, reporting, and prioritisation framework — deployed, adopted, and owned by your team.</p>
           </div>
-          <div class="dur">3–6 months</div>
+          <div class="dur" data-i18n="eng3_d">3–6 months</div>
         </div>
         <div class="eng-item">
           <div class="main">
-            <h3>Service Portfolio &amp; Consolidation Review</h3>
-            <p>Capability mapping and overlap analysis with concrete consolidation recommendations.</p>
+            <h3 data-i18n="eng4_h">Service Portfolio &amp; Consolidation Review</h3>
+            <p data-i18n="eng4_p">Capability mapping and overlap analysis with concrete consolidation recommendations.</p>
           </div>
-          <div class="dur">6–8 weeks</div>
+          <div class="dur" data-i18n="eng4_d">6–8 weeks</div>
         </div>
         <div class="eng-item">
           <div class="main">
-            <h3>Fractional Head of PMO / Advisory Retainer</h3>
-            <p>Ongoing executive-level steering for organisations that need the seniority without the headcount.</p>
+            <h3 data-i18n="eng5_h">Fractional Head of PMO / Advisory Retainer</h3>
+            <p data-i18n="eng5_p">Ongoing executive-level steering for organisations that need the seniority without the headcount.</p>
           </div>
-          <div class="dur">Retainer</div>
+          <div class="dur" data-i18n="eng5_d">Retainer</div>
         </div>
       </div>
     </div>
@@ -418,18 +424,18 @@
   <section class="cred">
     <div class="wrap">
       <div class="sec-head">
-        <div class="sec-tag">Credentials</div>
-        <h2>Certified, connected, and current.</h2>
+        <div class="sec-tag" data-i18n="cred_tag">Credentials</div>
+        <h2 data-i18n="cred_h2">Certified, connected, and current.</h2>
       </div>
       <div class="chips">
         <span class="chip">PMP</span>
         <span class="chip">MSP Practitioner</span>
         <span class="chip">Lean Six Sigma Green Belt</span>
-        <span class="chip hl">PMI-CPMAI · in progress</span>
+        <span class="chip hl" data-i18n="cred_cpmai">PMI-CPMAI · in progress</span>
         <span class="chip hl">Smartsheet EMEA Product Advisory Council 2024–2026</span>
-        <span class="chip">PMO Lecturer · Swiss business school</span>
-        <span class="chip">Bilingual French / English</span>
-        <span class="chip">Lausanne-based</span>
+        <span class="chip" data-i18n="cred_lect">PMO Lecturer · Swiss business school</span>
+        <span class="chip" data-i18n="cred_biling">Bilingual French / English</span>
+        <span class="chip" data-i18n="cred_loc">Lausanne-based</span>
       </div>
     </div>
   </section>
@@ -440,24 +446,11 @@
       <div class="about-flex">
         <img class="about-portrait" src="data:image/jpeg;base64,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" alt="Grégoire Martin, founder of Smart PM Hub" width="150" height="150">
         <div class="about-body">
-          <div class="sec-tag">About</div>
-          <h2>Hi, I'm Grégoire.</h2>
-          <p>
-            For 18+ years I've sat at the point where strategy meets delivery — leading portfolio and
-            PMO functions across international sport governance, FMCG, automotive, and strategy consulting.
-            I've governed 50+ concurrent strategic projects a year, run profit-improvement portfolios
-            across emerging markets, and lately spent my time bringing AI into operating models without
-            letting the governance slip.
-          </p>
-          <p>
-            I work as a facilitator, not a firefighter — <em>enable, don't do it for them</em>. The point
-            isn't to leave a deck behind; it's to build the machinery and the capability so your teams
-            keep delivering long after the engagement ends. I'm based in Lausanne, work in French and
-            English, and teach the next generation of project leaders at a Swiss business school.
-          </p>
-          <div class="about-quote">
-            "The best framework is the one your teams will actually use. I start with how you deliver, not with the technology."
-          </div>
+          <div class="sec-tag" data-i18n="about_tag">About</div>
+          <h2 data-i18n="about_h2">Hi, I'm Grégoire.</h2>
+          <p data-i18n="about_p1">For 18+ years I've sat at the point where strategy meets delivery — leading portfolio and PMO functions across international sport governance, FMCG, automotive, and strategy consulting. I've governed 50+ concurrent strategic projects a year, run profit-improvement portfolios across emerging markets, and lately spent my time bringing AI into operating models without letting the governance slip.</p>
+          <p data-i18n="about_p2">I work as a facilitator, not a firefighter — <em>enable, don't do it for them</em>. The point isn't to leave a deck behind; it's to build the machinery and the capability so your teams keep delivering long after the engagement ends. I'm based in Lausanne, work in French and English, and teach the next generation of project leaders at a Swiss business school.</p>
+          <div class="about-quote" data-i18n="about_quote">"The best framework is the one your teams will actually use. I start with how you deliver, not with the technology."</div>
         </div>
       </div>
     </div>
@@ -467,22 +460,19 @@
   <section class="contact" id="contact">
     <div class="wrap">
       <div class="sec-head">
-        <div class="sec-tag">Start a conversation</div>
-        <h2>Let's talk about where your delivery is getting stuck.</h2>
+        <div class="sec-tag" data-i18n="contact_tag">Start a conversation</div>
+        <h2 data-i18n="contact_h2">Let's talk about where your delivery is getting stuck.</h2>
       </div>
       <div class="contact-flex">
         <div>
-          <p class="lead">
-            Whether you're standing up a PMO, wrestling AI into your operating model, or just need a
-            senior pair of hands on portfolio governance — the first conversation is free and useful either way.
-          </p>
+          <p class="lead" data-i18n="contact_lead">Whether you're standing up a PMO, wrestling AI into your operating model, or just need a senior pair of hands on portfolio governance — the first conversation is free and useful either way.</p>
         </div>
         <div class="contact-actions">
           <a href="mailto:gregoiremart1@gmail.com">
-            <span>Email me</span><span class="arw">→</span>
+            <span data-i18n="contact_email">Email me</span><span class="arw">→</span>
           </a>
           <a href="https://www.linkedin.com/in/gregoiremartin/" target="_blank" rel="noopener">
-            <span>Connect on LinkedIn</span><span class="arw">→</span>
+            <span data-i18n="contact_li">Connect on LinkedIn</span><span class="arw">→</span>
           </a>
         </div>
       </div>
@@ -500,6 +490,112 @@
 
 <script>
   document.getElementById('yr').textContent = new Date().getFullYear();
+
+  const fr = {
+    nav_how:"Démarche", nav_services:"Prestations", nav_engagements:"Missions", nav_about:"À propos",
+    nav_cta:"Prendre contact",
+    hero_eyebrow:"Portfolio · PMO · delivery augmenté par l'IA",
+    hero_h1:"Le trait d'union entre stratégie et exécution.",
+    hero_sub:"J'aide les organisations à transformer une ambition stratégique en une exécution gouvernée et réellement adoptée — en installant la mécanique portfolio et PMO, en intégrant l'IA à l'organisation sans risque, et en construisant la capacité qui la fait tourner bien après mon départ.",
+    hero_btn1:"Prendre contact", hero_btn2:"Voir ma façon de travailler",
+    hero_m1:"De direction de programmes et de portefeuilles",
+    hero_m2:"Projets stratégiques pilotés simultanément par an",
+    hero_m3:"Mise en place projet & reporting, après refonte par l'IA",
+    conv_tag:"Mes convictions",
+    conv_h2:"Trois convictions qui structurent chaque mission.",
+    conv1_h:"La gouvernance sécurise l'accélération",
+    conv1_p:"C'est la structure qui permet d'aller vite sans shadow-IA ni projets clandestins. Le cadre n'est pas le frein — c'est le garde-fou qui permet de prendre le virage plus vite.",
+    conv2_h:"L'économie prime sur la démo",
+    conv2_p:"Faire ou acheter, modèles de licence et coût total décident si la valeur est réelle. Une preuve de concept éblouissante qui ne survit pas à son propre business case n'a jamais été une solution.",
+    conv3_h:"L'adoption est la seule mesure qui compte",
+    conv3_p:"Un cadre que personne n'utilise est un coût, pas un actif. Je mesure le succès à ce que les équipes continuent réellement de faire — pas à ce qui a été livré sur le papier.",
+    how_tag:"Démarche",
+    how_h2:"Un chemin rigoureux, de l'ambition à l'adoption.",
+    how_p:"Trois phases, chacune avec un livrable clair. Vous gardez la main d'un bout à l'autre — l'objectif est de laisser vos équipes aux commandes.",
+    how1_n:"Phase 01", how1_h:"Diagnostiquer",
+    how1_p:"On part de la façon dont votre organisation livre réellement aujourd'hui — les manques de gouvernance, les goulets, le travail clandestin. Vous obtenez une évaluation de maturité lucide, pas un argumentaire commercial.",
+    how2_n:"Phase 02", how2_h:"Concevoir la feuille de route gouvernée",
+    how2_p:"Je reviens avec un plan priorisé : où intervenir, ce que ça coûte, ce que ça rapporte, et comment l'IA s'intègre sans risque à l'organisation. Les décisions reposent sur l'économie, pas sur la démo.",
+    how3_n:"Phase 03", how3_h:"Déployer & transmettre",
+    how3_p:"On déploie le cadre aux côtés de vos équipes et on construit la capacité à le faire vivre. Le succès se mesure à l'adoption — ce que les gens continuent de faire une fois que je suis parti.",
+    svc_tag:"Prestations",
+    svc_h2:"Quatre façons d'aider les dirigeants à combler l'écart entre le plan et l'exécution.",
+    svc_p:"Chaque mission est conçue pour laisser une capacité derrière elle — je travaille <em>avec</em> vos équipes, pas à leur place.",
+    svc1_h:"Gouvernance Portfolio & PMO",
+    svc1_p:"Installer ou redresser la gestion de portefeuille : priorisation selon les objectifs stratégiques, revues d'investissement et de jalons, gouvernance des risques (RAID), reporting direction et conseil d'administration, réalisation des bénéfices.",
+    svc1_pr:"Éprouvé en pilotant 50+ projets stratégiques simultanés par an dans une organisation internationale complexe ; un portefeuille d'amélioration de la rentabilité de 30 M€+/an sur les marchés d'Amérique latine ; une fonction stratégique de ~40 M$ et 52 projets dans un groupe FMCG mondial.",
+    svc2_h:"PMO augmenté par l'IA & workflows agentiques",
+    svc2_p:"Intégrer l'IA à l'organisation <em>avec</em> gouvernance : cadres d'évaluation des cas d'usage, conception de workflows agentiques, connectivité Copilot × Smartsheet, et les arbitrages faire-ou-acheter et de licence qui rendent le tout économique.",
+    svc2_pr:"Appuyé sur la mise en œuvre concrète d'une initiative IA/agentique en entreprise, l'appartenance au Smartsheet EMEA Product Advisory Council, et le parcours PMI-CPMAI. Résultat phare : mise en place projet et reporting consolidé passés de deux jours à quelques minutes.",
+    svc3_h:"Transformation stratégique & design organisationnel",
+    svc3_p:"Travail sur le modèle opérationnel et le portefeuille de services : cartographie des capacités, analyse des recouvrements et consolidation, modèles opérationnels cibles, et la stratégie de conduite du changement et d'adoption qui les ancre.",
+    svc3_pr:"Ancré dans la construction d'un portefeuille de services de 25 départements, ayant abouti à une recommandation de consolidation adoptée par la direction.",
+    svc4_h:"Conseil aux dirigeants & montée en compétence",
+    svc4_p:"Un accompagnement de conseiller de confiance auprès de la direction sur les décisions de priorisation et d'investissement — et de la formation qui fait monter vos équipes internes en compétence pour que la capacité survive à la mission.",
+    svc4_pr:"Renforcé par une charge de cours PMO en cours dans une haute école de gestion suisse, formant la prochaine génération de chefs de projet.",
+    eng_tag:"Missions packagées",
+    eng_h2:"Périmètre clair, résultats clairs, délais clairs.",
+    eng_p:"Des points d'entrée productisés, dimensionnés au problème — du diagnostic ciblé au rôle de direction à temps partagé.",
+    eng1_h:"Diagnostic PMO",
+    eng1_p:"Évaluation de maturité, manques de gouvernance, et une feuille de route priorisée immédiatement actionnable.",
+    eng1_d:"2–4 semaines",
+    eng2_h:"Sprint de maturité IA",
+    eng2_p:"Évaluation des cas d'usage, l'économie derrière chacun, et un pilote gouverné conçu pour prouver une valeur réelle.",
+    eng2_d:"4–6 semaines",
+    eng3_h:"Mise en place du portfolio",
+    eng3_p:"Un cadre complet de gouvernance, de reporting et de priorisation — déployé, adopté et approprié par votre équipe.",
+    eng3_d:"3–6 mois",
+    eng4_h:"Revue portefeuille de services & consolidation",
+    eng4_p:"Cartographie des capacités et analyse des recouvrements, avec des recommandations de consolidation concrètes.",
+    eng4_d:"6–8 semaines",
+    eng5_h:"Direction PMO à temps partagé / mandat de conseil",
+    eng5_p:"Un pilotage au niveau direction, en continu, pour les organisations qui ont besoin de la séniorité sans l'effectif.",
+    eng5_d:"Mandat",
+    cred_tag:"Références",
+    cred_h2:"Certifié, connecté, à jour.",
+    cred_cpmai:"PMI-CPMAI · en cours",
+    cred_lect:"Chargé de cours PMO · haute école de gestion suisse",
+    cred_biling:"Bilingue français / anglais",
+    cred_loc:"Basé à Lausanne",
+    about_tag:"À propos",
+    about_h2:"Bonjour, je suis Grégoire.",
+    about_p1:"Depuis 18+ ans, je me tiens au point de rencontre entre la stratégie et l'exécution — à la tête de fonctions portfolio et PMO dans la gouvernance sportive internationale, les biens de grande consommation, l'automobile et le conseil en stratégie. J'ai piloté 50+ projets stratégiques simultanés par an, mené des portefeuilles d'amélioration de la rentabilité sur des marchés émergents, et consacré ces derniers temps à intégrer l'IA aux organisations sans jamais relâcher la gouvernance.",
+    about_p2:"Je travaille en facilitateur, pas en pompier — <em>faire avec, pas faire pour</em>. Le but n'est pas de laisser un slide derrière moi ; c'est de bâtir la mécanique et la capacité pour que vos équipes continuent de livrer bien après la fin de la mission. Je suis basé à Lausanne, je travaille en français et en anglais, et j'enseigne à la prochaine génération de chefs de projet dans une haute école de gestion suisse.",
+    about_quote:"« Le meilleur cadre est celui que vos équipes utiliseront vraiment. Je pars de votre façon de livrer, pas de la technologie. »",
+    contact_tag:"Prendre contact",
+    contact_h2:"Parlons de là où votre exécution se bloque.",
+    contact_lead:"Que vous montiez un PMO, que vous tentiez d'intégrer l'IA à votre organisation, ou que vous ayez simplement besoin d'une paire de mains senior sur la gouvernance de portefeuille — la première conversation est gratuite et utile dans tous les cas.",
+    contact_email:"M'écrire", contact_li:"Me contacter sur LinkedIn"
+  };
+
+  const toggle = document.getElementById('langToggle');
+  const nodes = document.querySelectorAll('[data-i18n]');
+  const en = {};
+  nodes.forEach(n => en[n.getAttribute('data-i18n')] = n.innerHTML);
+
+  function setLang(lang){
+    const dict = lang === 'fr' ? fr : en;
+    nodes.forEach(n => {
+      const k = n.getAttribute('data-i18n');
+      if (dict[k] !== undefined) n.innerHTML = dict[k];
+    });
+    document.documentElement.lang = lang;
+    toggle.textContent = lang === 'fr' ? 'EN' : 'FR';
+    try { localStorage.setItem('spmh_lang', lang); } catch(e){}
+  }
+
+  let current = 'en';
+  try {
+    const saved = localStorage.getItem('spmh_lang');
+    if (saved) current = saved;
+    else if ((navigator.language||'').toLowerCase().startsWith('fr')) current = 'fr';
+  } catch(e){}
+  if (current === 'fr') setLang('fr');
+
+  toggle.addEventListener('click', () => {
+    current = (document.documentElement.lang === 'fr') ? 'en' : 'fr';
+    setLang(current);
+  });
 </script>
 </body>
 </html>
