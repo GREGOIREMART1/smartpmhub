@@ -299,6 +299,104 @@
   .ai-quad.win li::before{background:var(--signal)}
   @media(max-width:640px){.ai-matrix{grid-template-columns:1fr}}
 
+  /* ---------- ACCORDION ---------- */
+  .acc-row{border-bottom:1px solid var(--steel-line)}
+  .acc-head{
+    width:100%;background:none;border:none;cursor:pointer;text-align:left;
+    display:grid;grid-template-columns:64px 1fr auto;gap:24px;align-items:center;
+    padding:26px 0;font-family:inherit;color:inherit;transition:padding-left .18s;
+  }
+  .acc-head:hover{padding-left:10px}
+  .acc-head .idx{font-family:var(--display);font-weight:700;font-size:1.05rem;color:var(--signal);align-self:start;padding-top:2px}
+  .acc-head .acc-title{display:flex;flex-direction:column;gap:6px}
+  .acc-head .acc-title h3{font-family:var(--display);font-weight:600;font-size:1.32rem;line-height:1.14;letter-spacing:-.01em;color:var(--ink)}
+  .acc-head .acc-title .tease{font-size:.95rem;color:var(--steel);line-height:1.45}
+  .acc-chev{
+    width:32px;height:32px;border:1px solid var(--steel-line);border-radius:50%;
+    display:flex;align-items:center;justify-content:center;flex-shrink:0;
+    transition:transform .28s ease,border-color .18s,background .18s;color:var(--steel);
+  }
+  .acc-head:hover .acc-chev{border-color:var(--signal);color:var(--signal)}
+  .acc-head[aria-expanded="true"] .acc-chev{transform:rotate(180deg);border-color:var(--signal);color:var(--signal)}
+  .acc-panel{overflow:hidden;max-height:0;transition:max-height .34s ease}
+  .acc-panel-inner{padding:0 0 30px 88px}
+  .acc-panel-inner p{font-size:1.02rem;color:var(--ink-soft);line-height:1.6}
+  .acc-panel-inner .proof{margin-top:16px;font-size:.9rem;color:var(--steel);padding-left:16px;border-left:2px solid var(--steel-line)}
+  @media(max-width:640px){
+    .acc-head{grid-template-columns:36px 1fr auto;gap:14px}
+    .acc-panel-inner{padding-left:0}
+  }
+  /* dark-section accordion (AI principle uses dark; teaching is dark) */
+  .teach .acc-row{border-color:var(--steel-line-dk)}
+  .teach .acc-head .acc-title h3{color:#fff}
+  .teach .acc-head .acc-title .tease{color:#8b93a3}
+  .teach .acc-chev{border-color:var(--steel-line-dk);color:#8b93a3}
+  .teach .acc-panel-inner p{color:#C4CBD7}
+
+  @media(prefers-reduced-motion:reduce){.acc-panel{transition:none}.acc-chev{transition:none}}
+  /* ---------- REVEAL TOGGLE ---------- */
+  .reveal-btn{
+    display:inline-flex;align-items:center;gap:10px;cursor:pointer;
+    font-family:var(--display);font-weight:600;font-size:.95rem;
+    background:none;border:1px solid var(--steel-line);border-radius:100px;
+    padding:11px 20px;color:var(--ink);transition:border-color .15s,color .15s;
+  }
+  .reveal-btn:hover{border-color:var(--signal);color:var(--signal)}
+  .reveal-btn .rv-chev{transition:transform .28s ease;font-size:1rem;line-height:1}
+  .reveal-btn[aria-expanded="true"] .rv-chev{transform:rotate(180deg)}
+  .reveal-panel{overflow:hidden;max-height:0;transition:max-height .4s ease}
+  /* dark variants */
+  .teach .reveal-btn{border-color:var(--steel-line-dk);color:#fff}
+  .teach .reveal-btn:hover{border-color:var(--signal);color:#6E97FF}
+
+  @media(prefers-reduced-motion:reduce){.reveal-panel,.reveal-btn .rv-chev{transition:none}}
+  /* ---------- PMO VALUE / EFFORT SLIDER ---------- */
+  .value{background:var(--ink);color:#fff}
+  .value .sec-tag{color:#6E97FF}
+  .value .sec-head h2{color:#fff}
+  .value .sec-head p{color:#AEB6C4}
+  .eff{
+    background:var(--ink-soft);border:1px solid var(--steel-line-dk);border-radius:16px;
+    padding:38px 40px 42px;
+  }
+  .eff-sliderwrap{margin-bottom:38px}
+  .eff-slider-top{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:6px}
+  .eff-level-name{font-family:var(--display);font-weight:700;font-size:1.15rem;color:#fff;letter-spacing:-.01em}
+  .eff-level-num{font-family:var(--display);font-weight:600;font-size:.85rem;color:#6E97FF}
+  .eff-level-desc{font-size:.95rem;color:#AEB6C4;line-height:1.5;margin-bottom:22px;min-height:2.9em}
+  input[type="range"].eff-range{
+    -webkit-appearance:none;appearance:none;width:100%;height:6px;border-radius:100px;
+    background:linear-gradient(90deg,var(--signal) 0%,var(--signal) var(--fill,0%),#33405c var(--fill,0%),#33405c 100%);
+    outline:none;cursor:pointer;
+  }
+  input[type="range"].eff-range::-webkit-slider-thumb{
+    -webkit-appearance:none;appearance:none;width:24px;height:24px;border-radius:50%;
+    background:#fff;border:3px solid var(--signal);cursor:pointer;box-shadow:0 2px 10px rgba(0,0,0,.35);
+  }
+  input[type="range"].eff-range::-moz-range-thumb{
+    width:24px;height:24px;border-radius:50%;background:#fff;border:3px solid var(--signal);cursor:pointer;
+  }
+  .eff-scale{display:flex;justify-content:space-between;margin-top:10px;font-family:var(--display);font-weight:500;font-size:.75rem;color:#6b7488}
+  .eff-bars{display:flex;flex-direction:column;gap:16px}
+  .eff-bar{display:grid;grid-template-columns:34px 1fr;gap:16px;align-items:center}
+  .eff-bar .tag{
+    width:34px;height:34px;border-radius:8px;display:flex;align-items:center;justify-content:center;
+    font-family:var(--display);font-weight:700;font-size:1rem;color:#fff;flex-shrink:0;
+  }
+  .eff-bar .track-wrap{display:flex;flex-direction:column;gap:7px;min-width:0}
+  .eff-bar .track-top{display:flex;justify-content:space-between;align-items:baseline;gap:12px}
+  .eff-bar .lbl{font-family:var(--display);font-weight:600;font-size:.98rem;color:#fff;line-height:1.2}
+  .eff-bar .pct{font-family:var(--display);font-weight:700;font-size:1rem;color:#fff;flex-shrink:0;font-variant-numeric:tabular-nums}
+  .eff-bar .track{height:10px;border-radius:100px;background:#33405c;overflow:hidden}
+  .eff-bar .fill{height:100%;border-radius:100px;transition:width .5s cubic-bezier(.4,0,.2,1)}
+  .eff-note{margin-top:30px;font-size:.9rem;color:#8b93a3;line-height:1.5;font-style:italic}
+  @media(max-width:640px){
+    .eff{padding:28px 22px 32px}
+    .eff-bar{grid-template-columns:28px 1fr;gap:12px}
+    .eff-bar .tag{width:28px;height:28px;font-size:.85rem}
+  }
+
+  @media(prefers-reduced-motion:reduce){.eff-bar .fill{transition:none}}
   @media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
   :focus-visible{outline:2px solid var(--signal);outline-offset:3px;border-radius:4px}
 </style>
@@ -312,6 +410,7 @@
       <a href="#how" data-i18n="nav_how">How it works</a>
       <a href="#services" data-i18n="nav_services">Services</a>
       <a href="#ai" data-i18n="nav_ai">AI for PM</a>
+      <a href="#value" data-i18n="nav_value">PMO value</a>
       <a href="#engagements" data-i18n="nav_engagements">Engagements</a>
       <a href="#teaching" data-i18n="nav_teaching">Teaching</a>
       <a href="#about" data-i18n="nav_about">About</a>
@@ -404,41 +503,79 @@
     <div class="wrap">
       <div class="sec-head">
         <div class="sec-tag" data-i18n="svc_tag">Service lines</div>
-        <h2 data-i18n="svc_h2">Four ways I help leaders close the gap between plan and delivery.</h2>
+        <h2 data-i18n="svc_h2">Five ways I help leaders close the gap between plan and delivery.</h2>
         <p data-i18n="svc_p">Each engagement is built to leave capability behind — I work <em>with</em> your teams, not instead of them.</p>
       </div>
-      <div class="svc">
-        <div class="svc-row">
-          <div class="idx">01</div>
-          <div><h3 data-i18n="svc1_h">Portfolio &amp; PMO Governance</h3></div>
-          <div class="body">
+      <div class="svc acc">
+        <div class="acc-row">
+          <button class="acc-head" aria-expanded="false">
+            <span class="idx">01</span>
+            <span class="acc-title">
+              <h3 data-i18n="svc1_h">Portfolio &amp; PMO Governance</h3>
+              <span class="tease" data-i18n="svc1_t">Stand up or rescue portfolio management, end to end.</span>
+            </span>
+            <span class="acc-chev" aria-hidden="true">⌄</span>
+          </button>
+          <div class="acc-panel"><div class="acc-panel-inner">
             <p data-i18n="svc1_p">Stand up or rescue portfolio management: prioritisation against strategic objectives, investment and stage-gate review, RAID governance, executive and Board reporting, and benefits realisation.</p>
             <div class="proof" data-i18n="svc1_pr">Proven governing 50+ concurrent strategic projects per year in a complex international organisation; a €30M+/yr profit-improvement portfolio across Latin American markets; a ~$40M, 52-project strategic function in a global FMCG group.</div>
-          </div>
+          </div></div>
         </div>
-        <div class="svc-row">
-          <div class="idx">02</div>
-          <div><h3 data-i18n="svc2_h">AI-Enabled PMO &amp; Agentic Workflows</h3></div>
-          <div class="body">
+        <div class="acc-row">
+          <button class="acc-head" aria-expanded="false">
+            <span class="idx">02</span>
+            <span class="acc-title">
+              <h3 data-i18n="svc2_h">AI-Enabled PMO &amp; Agentic Workflows</h3>
+              <span class="tease" data-i18n="svc2_t">AI where it saves PMs real time — governed, not hyped.</span>
+            </span>
+            <span class="acc-chev" aria-hidden="true">⌄</span>
+          </button>
+          <div class="acc-panel"><div class="acc-panel-inner">
             <p data-i18n="svc2_p">Put AI where it actually saves project managers time — turning meeting transcripts into status reports, answering questions on your portfolio data conversationally, streamlining project intake — always <em>with</em> governance: a use-case assessment that scores each idea on impact, complexity and risk, human-in-the-loop before anything is automated, and the build-vs-buy and licensing calls that keep it economic.</p>
             <div class="proof" data-i18n="svc2_pr">Backed by hands-on delivery of a live enterprise AI/agentic initiative, Smartsheet EMEA Product Advisory Council membership, and the PMI-CPMAI path. Headline result: project setup and consolidated reporting cut from two days to minutes.</div>
-          </div>
+          </div></div>
         </div>
-        <div class="svc-row">
-          <div class="idx">03</div>
-          <div><h3 data-i18n="svc3_h">Strategic Transformation &amp; Org Design</h3></div>
-          <div class="body">
+        <div class="acc-row">
+          <button class="acc-head" aria-expanded="false">
+            <span class="idx">03</span>
+            <span class="acc-title">
+              <h3 data-i18n="svc3_h">Strategic Transformation &amp; Org Design</h3>
+              <span class="tease" data-i18n="svc3_t">Operating models and service portfolios that actually stick.</span>
+            </span>
+            <span class="acc-chev" aria-hidden="true">⌄</span>
+          </button>
+          <div class="acc-panel"><div class="acc-panel-inner">
             <p data-i18n="svc3_p">Operating-model and service-portfolio work: capability mapping, overlap and consolidation analysis, target operating models, and the change and adoption strategy that makes them stick.</p>
             <div class="proof" data-i18n="svc3_pr">Anchored by a 25-department service-portfolio build-out that produced a departmental consolidation recommendation adopted by leadership.</div>
-          </div>
+          </div></div>
         </div>
-        <div class="svc-row">
-          <div class="idx">04</div>
-          <div><h3 data-i18n="svc4_h">Executive Advisory &amp; Capability Building</h3></div>
-          <div class="body">
+        <div class="acc-row">
+          <button class="acc-head" aria-expanded="false">
+            <span class="idx">04</span>
+            <span class="acc-title">
+              <h3 data-i18n="svc4_h">Executive Advisory &amp; Capability Building</h3>
+              <span class="tease" data-i18n="svc4_t">A senior sounding board — and training that outlasts it.</span>
+            </span>
+            <span class="acc-chev" aria-hidden="true">⌄</span>
+          </button>
+          <div class="acc-panel"><div class="acc-panel-inner">
             <p data-i18n="svc4_p">Trusted-advisor support to leadership on prioritisation and investment decisions — plus training that upskills your internal teams so the capability outlasts the engagement.</p>
             <div class="proof" data-i18n="svc4_pr">Reinforced by a current PMO lectureship at HEG Arc, training the next generation of project leaders.</div>
-          </div>
+          </div></div>
+        </div>
+        <div class="acc-row">
+          <button class="acc-head" aria-expanded="false">
+            <span class="idx">05</span>
+            <span class="acc-title">
+              <h3 data-i18n="svc5_h">PPM Platform Selection &amp; Roll-Out</h3>
+              <span class="tease" data-i18n="svc5_t">Choose the right tool and stand it up fast — Smartsheet &amp; beyond.</span>
+            </span>
+            <span class="acc-chev" aria-hidden="true">⌄</span>
+          </button>
+          <div class="acc-panel"><div class="acc-panel-inner">
+            <p data-i18n="svc5_p">Choosing and standing up the digital backbone your portfolio runs on — vendor-neutral selection, then hands-on implementation, configuration and adoption. Deep expertise in Smartsheet, with a supplier network I can activate to build fast rather than start from scratch.</p>
+            <div class="proof" data-i18n="svc5_pr">Proven turning a scattered project-tracking landscape into one enterprise PPM platform: a common methodology (charters, RAID logs, dashboards, closure), a formalised governance forum, a super-user network, and adoption rolled out department by department.</div>
+          </div></div>
         </div>
       </div>
     </div>
@@ -473,6 +610,13 @@
             <p data-i18n="eng3_p">A full governance, reporting, and prioritisation framework — deployed, adopted, and owned by your team.</p>
           </div>
           <div class="dur" data-i18n="eng3_d">3–6 months</div>
+        </div>
+        <div class="eng-item">
+          <div class="main">
+            <h3 data-i18n="eng6_h">PPM Platform Deployment</h3>
+            <p data-i18n="eng6_p">From vendor selection to a live, adopted platform — configuration, templates, governance and super-users. Fast, thanks to a supplier network I can activate.</p>
+          </div>
+          <div class="dur" data-i18n="eng6_d">2–4 months</div>
         </div>
         <div class="eng-item">
           <div class="main">
@@ -546,7 +690,11 @@
         <h3 data-i18n="ai_matrix_h">Quick wins first.</h3>
         <p data-i18n="ai_matrix_p">Not every use case is worth doing now. I score each on business impact and ease of implementation — and start where impact is high and effort is low, before touching anything that needs real budget or custom build.</p>
       </div>
-      <div class="ai-matrix">
+      <button class="reveal-btn" aria-expanded="false" style="margin-bottom:8px">
+        <span data-i18n="ai_matrix_toggle">See the quick-wins matrix</span><span class="rv-chev" aria-hidden="true">⌄</span>
+      </button>
+      <div class="reveal-panel">
+      <div class="ai-matrix" style="margin-top:20px">
         <div class="ai-quad win">
           <div class="lbl" data-i18n="ai_q1_l">Quick wins — start here</div>
           <div class="meta" data-i18n="ai_q1_m">High impact · easy to deliver</div>
@@ -582,6 +730,88 @@
           </ul>
         </div>
       </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PMO VALUE / EFFORT SLIDER -->
+  <section class="value" id="value">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="sec-tag" data-i18n="value_tag">Where the PMO adds value</div>
+        <h2 data-i18n="value_h2">A PMO isn't a black box. You can see exactly where the effort goes — and rebalance it.</h2>
+        <p data-i18n="value_p">Effort spreads across five priorities. As a PMO matures, that mix should shift — away from firefighting and manual support, toward strategic alignment and value governance. Move the slider to see how.</p>
+      </div>
+
+      <div class="eff">
+        <div class="eff-sliderwrap">
+          <div class="eff-slider-top">
+            <span class="eff-level-name" id="effLevelName">Reactive</span>
+            <span class="eff-level-num"><span data-i18n="value_level_word">Maturity level</span> <span id="effLevelNum">1</span>/5</span>
+          </div>
+          <div class="eff-level-desc" id="effLevelDesc" data-i18n="value_desc1">Effort is consumed by keeping the lights on: manual support to project managers and standing up the tooling. Little capacity is left for strategy.</div>
+          <input type="range" class="eff-range" id="effRange" min="1" max="5" step="1" value="1" aria-label="PMO maturity level">
+          <div class="eff-scale">
+            <span data-i18n="value_scale_lo">Reactive</span>
+            <span data-i18n="value_scale_hi">Strategic</span>
+          </div>
+        </div>
+
+        <div class="eff-bars">
+          <div class="eff-bar">
+            <span class="tag" style="background:#1E4FD1">A</span>
+            <div class="track-wrap">
+              <div class="track-top">
+                <span class="lbl" data-i18n="value_a">Align portfolio with strategy</span>
+                <span class="pct" data-pct="A">10%</span>
+              </div>
+              <div class="track"><div class="fill" data-fill="A" style="background:#2F6BFF;width:10%"></div></div>
+            </div>
+          </div>
+          <div class="eff-bar">
+            <span class="tag" style="background:#2F6BFF">B</span>
+            <div class="track-wrap">
+              <div class="track-top">
+                <span class="lbl" data-i18n="value_b">Manage the portfolio: services, programmes, projects</span>
+                <span class="pct" data-pct="B">23%</span>
+              </div>
+              <div class="track"><div class="fill" data-fill="B" style="background:#5B8DEF;width:23%"></div></div>
+            </div>
+          </div>
+          <div class="eff-bar">
+            <span class="tag" style="background:#E0524F">C</span>
+            <div class="track-wrap">
+              <div class="track-top">
+                <span class="lbl" data-i18n="value_c">Support project &amp; programme managers</span>
+                <span class="pct" data-pct="C">30%</span>
+              </div>
+              <div class="track"><div class="fill" data-fill="C" style="background:#E0524F;width:30%"></div></div>
+            </div>
+          </div>
+          <div class="eff-bar">
+            <span class="tag" style="background:#1E9E6A">D</span>
+            <div class="track-wrap">
+              <div class="track-top">
+                <span class="lbl" data-i18n="value_d">Run value governance</span>
+                <span class="pct" data-pct="D">12%</span>
+              </div>
+              <div class="track"><div class="fill" data-fill="D" style="background:#22B378;width:12%"></div></div>
+            </div>
+          </div>
+          <div class="eff-bar">
+            <span class="tag" style="background:#E8912A">E</span>
+            <div class="track-wrap">
+              <div class="track-top">
+                <span class="lbl" data-i18n="value_e">Select &amp; roll out the PPM platform</span>
+                <span class="pct" data-pct="E">25%</span>
+              </div>
+              <div class="track"><div class="fill" data-fill="E" style="background:#F0A63E;width:25%"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="eff-note" data-i18n="value_note">Illustrative model. In a real engagement, these numbers come from an effort-allocation assessment of your actual PMO — the point is that they can be measured, and deliberately rebalanced.</div>
+      </div>
     </div>
   </section>
 
@@ -613,11 +843,15 @@
       </div>
 
       <div class="teach-offer">
-        <div class="sec-head" style="margin-top:52px;margin-bottom:0">
+        <div class="sec-head" style="margin-top:52px;margin-bottom:22px">
           <div class="sec-tag" data-i18n="teach_offer_tag">Bring it in-house</div>
           <h2 data-i18n="teach_offer_h2" style="font-size:clamp(1.4rem,2.4vw,1.9rem)">Training formats for your organisation.</h2>
         </div>
-        <div class="teach-offer-grid">
+        <button class="reveal-btn" aria-expanded="false">
+          <span data-i18n="teach_offer_toggle">See the in-house training formats</span><span class="rv-chev" aria-hidden="true">⌄</span>
+        </button>
+        <div class="reveal-panel">
+        <div class="teach-offer-grid" style="margin-top:24px">
           <div class="teach-offer-item">
             <div class="fmt" data-i18n="teach_o1_fmt">Half-day · leadership</div>
             <h4 data-i18n="teach_o1_h">PMO Masterclass for leaders</h4>
@@ -633,6 +867,7 @@
             <h4 data-i18n="teach_o3_h">PM capability building</h4>
             <p data-i18n="teach_o3_p">Practical upskilling for project managers on governance, prioritisation, reporting and the tools that support them — built around your methodology.</p>
           </div>
+        </div>
         </div>
       </div>
     </div>
@@ -710,7 +945,7 @@
   document.getElementById('yr').textContent = new Date().getFullYear();
 
   const fr = {
-    nav_how:"Démarche", nav_services:"Prestations", nav_ai:"IA & projet", nav_engagements:"Missions", nav_teaching:"Formation", nav_about:"À propos",
+    nav_how:"Démarche", nav_services:"Prestations", nav_ai:"IA & projet", nav_value:"Valeur PMO", nav_engagements:"Missions", nav_teaching:"Formation", nav_about:"À propos",
     nav_cta:"Prendre contact",
     hero_eyebrow:"Portfolio · PMO · delivery augmenté par l'IA",
     hero_h1:"Le trait d'union entre stratégie et exécution.",
@@ -737,20 +972,31 @@
     how3_n:"Phase 03", how3_h:"Déployer & transmettre",
     how3_p:"On déploie le cadre aux côtés de vos équipes et on construit la capacité à le faire vivre. Le succès se mesure à l'adoption — ce que les gens continuent de faire une fois que je suis parti.",
     svc_tag:"Prestations",
-    svc_h2:"Quatre façons d'aider les dirigeants à combler l'écart entre le plan et l'exécution.",
+    svc_h2:"Cinq façons d'aider les dirigeants à combler l'écart entre le plan et l'exécution.",
     svc_p:"Chaque mission est conçue pour laisser une capacité derrière elle — je travaille <em>avec</em> vos équipes, pas à leur place.",
     svc1_h:"Gouvernance Portfolio & PMO",
+    svc1_t:"Installer ou redresser la gestion de portefeuille, de bout en bout.",
     svc1_p:"Installer ou redresser la gestion de portefeuille : priorisation selon les objectifs stratégiques, revues d'investissement et de jalons, gouvernance des risques (RAID), reporting direction et conseil d'administration, réalisation des bénéfices.",
     svc1_pr:"Éprouvé en pilotant 50+ projets stratégiques simultanés par an dans une organisation internationale complexe ; un portefeuille d'amélioration de la rentabilité de 30 M€+/an sur les marchés d'Amérique latine ; une fonction stratégique de ~40 M$ et 52 projets dans un groupe FMCG mondial.",
     svc2_h:"PMO augmenté par l'IA & workflows agentiques",
+    svc2_t:"L'IA là où elle fait gagner du temps aux PM — gouvernée, pas survendue.",
     svc2_p:"Mettre l'IA là où elle fait réellement gagner du temps aux chefs de projet — transformer les transcripts de réunion en rapports d'avancement, interroger les données de votre portefeuille en langage naturel, fluidifier l'intake projet — toujours <em>avec</em> gouvernance : une évaluation des cas d'usage qui note chaque idée sur l'impact, la complexité et le risque, une validation humaine avant toute automatisation, et les arbitrages faire-ou-acheter et de licence qui gardent le tout économique.",
     svc2_pr:"Appuyé sur la mise en œuvre concrète d'une initiative IA/agentique en entreprise, l'appartenance au Smartsheet EMEA Product Advisory Council, et le parcours PMI-CPMAI. Résultat phare : mise en place projet et reporting consolidé passés de deux jours à quelques minutes.",
     svc3_h:"Transformation stratégique & design organisationnel",
+    svc3_t:"Modèles opérationnels et portefeuilles de services qui tiennent.",
     svc3_p:"Travail sur le modèle opérationnel et le portefeuille de services : cartographie des capacités, analyse des recouvrements et consolidation, modèles opérationnels cibles, et la stratégie de conduite du changement et d'adoption qui les ancre.",
     svc3_pr:"Ancré dans la construction d'un portefeuille de services de 25 départements, ayant abouti à une recommandation de consolidation adoptée par la direction.",
     svc4_h:"Conseil aux dirigeants & montée en compétence",
+    svc4_t:"Un sparring-partner senior — et une formation qui lui survit.",
     svc4_p:"Un accompagnement de conseiller de confiance auprès de la direction sur les décisions de priorisation et d'investissement — et de la formation qui fait monter vos équipes internes en compétence pour que la capacité survive à la mission.",
     svc4_pr:"Renforcé par une charge de cours PMO en cours à la HEG Arc, formant la prochaine génération de chefs de projet.",
+    svc5_h:"Choix &amp; déploiement d'une plateforme PPM",
+    svc5_t:"Choisir le bon outil et le déployer vite — Smartsheet &amp; au-delà.",
+    svc5_p:"Choisir et mettre en place l'épine dorsale numérique de votre portefeuille — sélection indépendante de l'outil, puis implémentation, configuration et adoption concrètes. Expertise pointue de Smartsheet, avec un réseau de fournisseurs que je peux activer pour construire vite plutôt que de repartir de zéro.",
+    svc5_pr:"Éprouvé en transformant un suivi de projets éparpillé en une plateforme PPM d'entreprise unique : une méthodologie commune (chartes, RAID logs, dashboards, clôture), un forum de gouvernance formalisé, un réseau de super-users, et une adoption déployée département par département.",
+    eng6_h:"Déploiement d'une plateforme PPM",
+    eng6_p:"De la sélection de l'outil à une plateforme vivante et adoptée — configuration, templates, gouvernance et super-users. Rapide, grâce à un réseau de fournisseurs que je peux activer.",
+    eng6_d:"2–4 mois",
     eng_tag:"Missions packagées",
     eng_h2:"Périmètre clair, résultats clairs, délais clairs.",
     eng_p:"Des points d'entrée productisés, dimensionnés au problème — du diagnostic ciblé au rôle de direction à temps partagé.",
@@ -805,6 +1051,7 @@
     ai_c3_l3:"Un expert référent identifié par équipe",
     ai_matrix_h:"Les quick wins d'abord.",
     ai_matrix_p:"Tous les cas d'usage ne valent pas la peine d'être lancés maintenant. Je note chacun sur l'impact métier et la facilité de mise en œuvre — et je commence là où l'impact est fort et l'effort faible, avant de toucher à ce qui exige un vrai budget ou un développement sur mesure.",
+    ai_matrix_toggle:"Voir la matrice quick-wins",
     ai_q1_l:"Quick wins — commencer ici",
     ai_q1_m:"Fort impact · faciles à livrer",
     ai_q1_i1:"Transcript vers rapport à partir des outils existants",
@@ -823,6 +1070,28 @@
     ai_q4_m:"Impact diffus · complexes à livrer",
     ai_q4_i1:"Surveillance de portefeuille entièrement autonome",
     ai_q4_i2:"Exploitation des agents &amp; supervision continue",
+    value_tag:"Là où le PMO crée de la valeur",
+    value_h2:"Un PMO n'est pas une boîte noire. On voit exactement où va l'effort — et on peut le rééquilibrer.",
+    value_p:"L'effort se répartit sur cinq priorités. À mesure que le PMO mûrit, ce dosage doit se déplacer — de la gestion des urgences et du support manuel vers l'alignement stratégique et la gouvernance de la valeur. Déplacez le curseur pour voir comment.",
+    value_level_word:"Niveau de maturité",
+    value_scale_lo:"Réactif",
+    value_scale_hi:"Stratégique",
+    value_lvl1_n:"Réactif",
+    value_lvl2_n:"Émergent",
+    value_lvl3_n:"Structuré",
+    value_lvl4_n:"Intégré",
+    value_lvl5_n:"Stratégique",
+    value_desc1:"L'effort est absorbé par le maintien en conditions : support manuel aux chefs de projet et mise en place de l'outil. Il reste peu de capacité pour la stratégie.",
+    value_desc2:"Les premières pratiques s'installent. Le support reste lourd, mais un peu d'énergie commence à se libérer pour la gouvernance et l'alignement.",
+    value_desc3:"Les méthodes sont en place et l'outil est adopté. L'effort se rééquilibre entre pilotage du portefeuille et gouvernance ; le support diminue.",
+    value_desc4:"Le PMO pilote par la valeur. L'alignement stratégique et la gouvernance montent en puissance ; l'outil et le support ne pèsent plus que marginalement.",
+    value_desc5:"Le PMO est un partenaire stratégique. L'essentiel de l'effort porte sur l'alignement et la gouvernance de la valeur ; le reste tourne tout seul.",
+    value_a:"Aligner le portefeuille sur la stratégie",
+    value_b:"Piloter le portefeuille : services, programmes, projets",
+    value_c:"Accompagner les chefs de projet et de programme",
+    value_d:"Assurer la gouvernance de la valeur",
+    value_e:"Choisir &amp; déployer la plateforme PPM",
+    value_note:"Modèle illustratif. En mission réelle, ces chiffres proviennent d'une évaluation de la répartition d'effort de votre PMO — l'important est qu'ils soient mesurables, et rééquilibrés de façon délibérée.",
     teach_tag:"Enseignement & formation",
     teach_h2:"J'enseigne ce que je pratique — et je peux former vos équipes à en faire autant.",
     teach_p:"Au-delà des missions clients, j'enseigne le PMO et la gouvernance de portefeuille au niveau postgrade, et je conçois des formations pratiques qui transforment la théorie en une capacité que vos équipes conservent.",
@@ -836,6 +1105,7 @@
     teach_card_l3:"Un diagnostic de maturité guidé sur un cas réel",
     teach_card_l4:"Une roadmap PMO sur 12 mois qu'ils construisent eux-mêmes",
     teach_offer_tag:"En intra-entreprise",
+    teach_offer_toggle:"Voir les formats de formation intra-entreprise",
     teach_offer_h2:"Des formats de formation pour votre organisation.",
     teach_o1_fmt:"Demi-journée · dirigeants",
     teach_o1_h:"Masterclass PMO pour dirigeants",
@@ -879,7 +1149,112 @@
   toggle.addEventListener('click', () => {
     current = (document.documentElement.lang === 'fr') ? 'en' : 'fr';
     setLang(current);
+    // re-measure any open collapsible panels (FR/EN text height differs)
+    requestAnimationFrame(recomputeOpenPanels);
+    // refresh the effort slider's level name in the new language
+    if (typeof renderEffort === 'function' && document.getElementById('effRange')) {
+      renderEffort(parseInt(document.getElementById('effRange').value,10));
+    }
   });
+
+  // ----- Accordion (services) + reveal toggles (AI matrix, teaching offer) -----
+  function openPanel(panel){ panel.style.maxHeight = panel.scrollHeight + 'px'; }
+  function closePanel(panel){ panel.style.maxHeight = '0px'; }
+
+  function recomputeOpenPanels(){
+    document.querySelectorAll('.acc-head[aria-expanded="true"], .reveal-btn[aria-expanded="true"]').forEach(btn => {
+      const panel = btn.classList.contains('acc-head') ? btn.nextElementSibling : btn.nextElementSibling;
+      if (panel) { panel.style.maxHeight = 'none'; const h = panel.scrollHeight; panel.style.maxHeight = h + 'px'; }
+    });
+  }
+
+  document.querySelectorAll('.acc-head').forEach(btn => {
+    const panel = btn.nextElementSibling;
+    btn.addEventListener('click', () => {
+      const isOpen = btn.getAttribute('aria-expanded') === 'true';
+      // close siblings within the same .acc group
+      const group = btn.closest('.acc');
+      if (group && !isOpen) {
+        group.querySelectorAll('.acc-head[aria-expanded="true"]').forEach(other => {
+          other.setAttribute('aria-expanded','false');
+          closePanel(other.nextElementSibling);
+        });
+      }
+      btn.setAttribute('aria-expanded', String(!isOpen));
+      isOpen ? closePanel(panel) : openPanel(panel);
+    });
+  });
+
+  document.querySelectorAll('.reveal-btn').forEach(btn => {
+    const panel = btn.nextElementSibling;
+    btn.addEventListener('click', () => {
+      const isOpen = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', String(!isOpen));
+      isOpen ? closePanel(panel) : openPanel(panel);
+    });
+  });
+
+  // ----- PMO effort slider -----
+  // Each level's effort mix across the five axes A–E (each column sums to 100).
+  const effData = {
+    1: {A:10, B:23, C:30, D:12, E:25},
+    2: {A:14, B:24, C:25, D:16, E:21},
+    3: {A:19, B:25, C:20, D:20, E:16},
+    4: {A:24, B:25, C:16, D:23, E:12},
+    5: {A:28, B:24, C:12, D:26, E:10}
+  };
+  const effLevelKeys = {
+    1: {name:'value_lvl1_n', desc:'value_desc1'},
+    2: {name:'value_lvl2_n', desc:'value_desc2'},
+    3: {name:'value_lvl3_n', desc:'value_desc3'},
+    4: {name:'value_lvl4_n', desc:'value_desc4'},
+    5: {name:'value_lvl5_n', desc:'value_desc5'}
+  };
+  // English fallbacks (these strings aren't all present in the DOM at load, so en{} may lack them)
+  const effLevelText_en = {
+    value_lvl1_n:'Reactive', value_lvl2_n:'Emerging', value_lvl3_n:'Structured',
+    value_lvl4_n:'Integrated', value_lvl5_n:'Strategic',
+    value_desc1:'Effort is consumed by keeping the lights on: manual support to project managers and standing up the tooling. Little capacity is left for strategy.',
+    value_desc2:'The first practices take hold. Support is still heavy, but a little energy starts to free up for governance and alignment.',
+    value_desc3:'Methods are in place and the tool is adopted. Effort rebalances between portfolio steering and governance; hands-on support drops.',
+    value_desc4:'The PMO steers by value. Strategic alignment and governance ramp up; tooling and support now weigh only at the margin.',
+    value_desc5:'The PMO is a strategic partner. Most of the effort goes to alignment and value governance; the rest runs itself.'
+  };
+  const range = document.getElementById('effRange');
+  const nameEl = document.getElementById('effLevelName');
+  const numEl = document.getElementById('effLevelNum');
+  const descEl = document.getElementById('effLevelDesc');
+
+  function effText(key){
+    // use fr dict when page is French, else english fallback/en dict
+    if (document.documentElement.lang === 'fr' && fr[key] !== undefined) return fr[key];
+    if (en[key] !== undefined) return en[key];
+    return effLevelText_en[key] || '';
+  }
+
+  function renderEffort(level){
+    const mix = effData[level];
+    document.querySelectorAll('[data-fill]').forEach(el => {
+      const axis = el.getAttribute('data-fill');
+      el.style.width = mix[axis] + '%';
+    });
+    document.querySelectorAll('[data-pct]').forEach(el => {
+      const axis = el.getAttribute('data-pct');
+      el.textContent = mix[axis] + '%';
+    });
+    numEl.textContent = level;
+    const keys = effLevelKeys[level];
+    nameEl.textContent = effText(keys.name);
+    descEl.setAttribute('data-i18n', keys.desc);
+    descEl.textContent = effText(keys.desc);
+    const pctFill = ((level - 1) / 4) * 100;
+    range.style.setProperty('--fill', pctFill + '%');
+  }
+
+  if (range){
+    range.addEventListener('input', () => renderEffort(parseInt(range.value,10)));
+    renderEffort(1);
+  }
 </script>
 </body>
 </html>
