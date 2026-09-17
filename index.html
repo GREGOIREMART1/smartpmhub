@@ -170,15 +170,6 @@
   }
   @media(max-width:640px){.eng-item{grid-template-columns:1fr;gap:12px}.eng-item .dur{justify-self:start}}
 
-  /* ---------- CREDENTIALS ---------- */
-  .cred .chips{display:flex;flex-wrap:wrap;gap:12px;margin-top:8px}
-  .chip{
-    font-family:var(--display);font-weight:500;font-size:.9rem;color:var(--ink-soft);
-    border:1px solid var(--steel-line);background:var(--paper-pure);
-    padding:9px 16px;border-radius:100px;
-  }
-  .chip.hl{border-color:var(--signal);color:var(--signal)}
-
   /* ---------- CONTACT ---------- */
   .contact{background:var(--ink);color:#fff}
   .contact .sec-head h2{color:#fff}
@@ -197,6 +188,12 @@
   @media(max-width:760px){.contact-flex{grid-template-columns:1fr;gap:36px}}
 
   footer{background:var(--ink);color:#6D7788;padding:32px 0 44px;border-top:1px solid var(--steel-line-dk)}
+  .foot-creds{
+    display:flex;flex-wrap:wrap;gap:8px 18px;padding-bottom:26px;margin-bottom:26px;
+    border-bottom:1px solid var(--steel-line-dk);
+  }
+  .foot-creds span{font-size:.82rem;color:#8b93a3;position:relative}
+  .foot-creds span:not(:last-child)::after{content:"·";position:absolute;right:-11px;color:#3a465e}
   .foot-inner{display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px;font-size:.86rem}
   .foot-inner a{color:#9AA3B2;text-decoration:none}
   .foot-inner a:hover{color:#fff}
@@ -873,26 +870,6 @@
     </div>
   </section>
 
-  <!-- CREDENTIALS -->
-  <section class="cred">
-    <div class="wrap">
-      <div class="sec-head">
-        <div class="sec-tag" data-i18n="cred_tag">Credentials</div>
-        <h2 data-i18n="cred_h2">Certified, connected, and current.</h2>
-      </div>
-      <div class="chips">
-        <span class="chip">PMP</span>
-        <span class="chip">MSP Practitioner</span>
-        <span class="chip">Lean Six Sigma Green Belt</span>
-        <span class="chip hl" data-i18n="cred_cpmai">PMI-CPMAI · in progress</span>
-        <span class="chip hl">Smartsheet EMEA Product Advisory Council 2024–2026</span>
-        <span class="chip" data-i18n="cred_lect">PMO Lecturer · HEG Arc</span>
-        <span class="chip" data-i18n="cred_biling">Bilingual French / English</span>
-        <span class="chip" data-i18n="cred_loc">Lausanne-based</span>
-      </div>
-    </div>
-  </section>
-
   <!-- ABOUT -->
   <section id="about">
     <div class="wrap">
@@ -935,9 +912,20 @@
 </main>
 
 <footer>
-  <div class="wrap foot-inner">
-    <div>© <span id="yr"></span> Smart PM Hub · Portfolio, PMO &amp; AI-enabled delivery advisory</div>
-    <div>Lausanne, Switzerland</div>
+  <div class="wrap">
+    <div class="foot-creds">
+      <span data-i18n="fc_pmp">PMP · PMI-CPMAI (in progress)</span>
+      <span data-i18n="fc_msp">MSP Practitioner</span>
+      <span data-i18n="fc_lss">Lean Six Sigma</span>
+      <span data-i18n="fc_ssc">Former Smartsheet Product Advisory Council member</span>
+      <span data-i18n="fc_lect">PMO Lecturer · HEG Arc</span>
+      <span data-i18n="fc_biling">Bilingual French / English</span>
+      <span data-i18n="fc_loc">Lausanne-based</span>
+    </div>
+    <div class="foot-inner">
+      <div>© <span id="yr"></span> Smart PM Hub · Portfolio, PMO &amp; AI-enabled delivery advisory</div>
+      <div>Lausanne, Switzerland</div>
+    </div>
   </div>
 </footer>
 
@@ -1015,12 +1003,13 @@
     eng5_h:"Direction PMO à temps partagé / mandat de conseil",
     eng5_p:"Un pilotage au niveau direction, en continu, pour les organisations qui ont besoin de la séniorité sans l'effectif.",
     eng5_d:"Mandat",
-    cred_tag:"Références",
-    cred_h2:"Certifié, connecté, à jour.",
-    cred_cpmai:"PMI-CPMAI · en cours",
-    cred_lect:"Chargé de cours PMO · HEG Arc",
-    cred_biling:"Bilingue français / anglais",
-    cred_loc:"Basé à Lausanne",
+    fc_pmp:"PMP · PMI-CPMAI (en cours)",
+    fc_msp:"MSP Practitioner",
+    fc_lss:"Lean Six Sigma",
+    fc_ssc:"Ancien membre du Smartsheet Product Advisory Council",
+    fc_lect:"Chargé de cours PMO · HEG Arc",
+    fc_biling:"Bilingue français / anglais",
+    fc_loc:"Basé à Lausanne",
     about_tag:"À propos",
     about_h2:"Bonjour, je suis Grégoire.",
     about_p1:"Depuis 18+ ans, je me tiens au point de rencontre entre la stratégie et l'exécution, à la tête de fonctions portfolio et PMO dans la gouvernance sportive internationale, les biens de grande consommation, l'automobile et le conseil en stratégie. J'ai piloté 50+ projets stratégiques simultanés par an, mené des portefeuilles d'amélioration de la rentabilité sur des marchés émergents, et consacré ces derniers temps à intégrer l'IA aux organisations sans jamais relâcher la gouvernance.",
