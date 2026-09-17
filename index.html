@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Smart PM Hub - Portfolio, PMO & AI-Enabled Delivery Advisory</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2064%2064'%3E%3Crect%20width='64'%20height='64'%20rx='13'%20fill='%23FFFFFF'/%3E%3Cg%20transform='translate(2,2)'%3E%3Cline%20x1='30'%20y1='13'%20x2='10'%20y2='39'%20stroke='%230E1729'%20stroke-width='4'%20stroke-linecap='round'/%3E%3Cline%20x1='30'%20y1='13'%20x2='30'%20y2='47'%20stroke='%230E1729'%20stroke-width='4'%20stroke-linecap='round'/%3E%3Cline%20x1='30'%20y1='13'%20x2='50'%20y2='39'%20stroke='%230E1729'%20stroke-width='4'%20stroke-linecap='round'/%3E%3Cline%20x1='10'%20y1='39'%20x2='30'%20y2='47'%20stroke='%232F6BFF'%20stroke-width='4'%20stroke-linecap='round'/%3E%3Cline%20x1='50'%20y1='39'%20x2='30'%20y2='47'%20stroke='%232F6BFF'%20stroke-width='4'%20stroke-linecap='round'/%3E%3Ccircle%20cx='30'%20cy='13'%20r='8'%20fill='%230E1729'/%3E%3Ccircle%20cx='10'%20cy='39'%20r='6.5'%20fill='%232F6BFF'/%3E%3Ccircle%20cx='50'%20cy='39'%20r='6.5'%20fill='%232F6BFF'/%3E%3Ccircle%20cx='30'%20cy='47'%20r='6.5'%20fill='%232F6BFF'/%3E%3C/g%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -43,15 +44,17 @@
     border-bottom:1px solid var(--steel-line);
   }
   .nav-inner{display:flex;align-items:center;justify-content:space-between;height:68px}
-  .brand{font-family:var(--display);font-weight:700;font-size:1.05rem;letter-spacing:-.01em;color:var(--ink);text-decoration:none}
-  .brand span{color:var(--signal)}
+  .brand{font-family:var(--display);font-weight:700;font-size:1.05rem;letter-spacing:-.01em;color:var(--ink);text-decoration:none;display:inline-flex;align-items:center;gap:9px}
+  .brand svg{width:26px;height:26px;flex-shrink:0;display:block}
+  .brand .brand-txt{color:var(--ink)}
+  .brand .brand-txt span{color:var(--signal)}
   .nav-links{display:flex;gap:34px;align-items:center}
   .nav-links a{font-size:.9rem;color:var(--steel);text-decoration:none;font-weight:500;transition:color .15s}
   .nav-links a:hover{color:var(--ink)}
   .nav-cta{
-    font-family:var(--body);font-weight:600;font-size:.9rem;
-    background:var(--ink);color:#fff;padding:9px 18px;border-radius:6px;text-decoration:none;
-    transition:background .15s;
+    font-family:var(--body);font-weight:600;font-size:.85rem;
+    background:var(--ink);color:#fff;padding:8px 14px;border-radius:6px;text-decoration:none;
+    transition:background .15s;white-space:nowrap;
   }
   .nav-cta:hover{background:var(--signal)}
   .lang-toggle{
@@ -402,7 +405,7 @@
 
 <header class="nav">
   <div class="wrap nav-inner">
-    <a href="#top" class="brand">Smart&nbsp;PM&nbsp;Hub<span>.</span></a>
+    <a href="#top" class="brand"><svg viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><line x1="30" y1="13" x2="10" y2="39" stroke="#0E1729" stroke-width="4" stroke-linecap="round"/><line x1="30" y1="13" x2="30" y2="47" stroke="#0E1729" stroke-width="4" stroke-linecap="round"/><line x1="30" y1="13" x2="50" y2="39" stroke="#0E1729" stroke-width="4" stroke-linecap="round"/><line x1="10" y1="39" x2="30" y2="47" stroke="#2F6BFF" stroke-width="4" stroke-linecap="round"/><line x1="50" y1="39" x2="30" y2="47" stroke="#2F6BFF" stroke-width="4" stroke-linecap="round"/><circle cx="30" cy="13" r="8" fill="#0E1729"/><circle cx="10" cy="39" r="6.5" fill="#2F6BFF"/><circle cx="50" cy="39" r="6.5" fill="#2F6BFF"/><circle cx="30" cy="47" r="6.5" fill="#2F6BFF"/></svg><span class="brand-txt">Smart&nbsp;PM&nbsp;Hub<span>.</span></span></a>
     <nav class="nav-links">
       <a href="#how" data-i18n="nav_how">How it works</a>
       <a href="#services" data-i18n="nav_services">Services</a>
@@ -411,7 +414,7 @@
       <a href="#engagements" data-i18n="nav_engagements">Engagements</a>
       <a href="#teaching" data-i18n="nav_teaching">Teaching</a>
       <a href="#about" data-i18n="nav_about">About</a>
-      <a href="#contact" class="nav-cta" data-i18n="nav_cta">Start a conversation</a>
+      <a href="#contact" class="nav-cta" data-i18n="nav_cta">Contact</a>
       <button id="langToggle" class="lang-toggle" aria-label="Switch language">FR</button>
     </nav>
   </div>
@@ -679,6 +682,7 @@
             <li data-i18n="ai_c3_l1">AI modules built into project-management training</li>
             <li data-i18n="ai_c3_l2">Role-based learning paths, not generic links</li>
             <li data-i18n="ai_c3_l3">A named go-to expert per team</li>
+            <li data-i18n="ai_c3_l4">A shared language to frame AI projects: the seven AI patterns (PMI)</li>
           </ul>
         </div>
       </div>
@@ -934,7 +938,7 @@
 
   const fr = {
     nav_how:"Démarche", nav_services:"Prestations", nav_ai:"IA & projet", nav_value:"Valeur PMO", nav_engagements:"Missions", nav_teaching:"Formation", nav_about:"À propos",
-    nav_cta:"Prendre contact",
+    nav_cta:"Contact",
     hero_eyebrow:"Portfolio · PMO · delivery augmenté par l'IA",
     hero_h1:"Le trait d'union entre stratégie et exécution.",
     hero_sub:"J'aide les organisations à transformer une ambition stratégique en une exécution gouvernée et réellement adoptée, en installant la mécanique portfolio et PMO, en intégrant l'IA à l'organisation sans risque, et en construisant la capacité qui la fait tourner bien après mon départ.",
